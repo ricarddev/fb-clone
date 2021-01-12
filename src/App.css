@@ -1,3 +1,4 @@
 .app-body{
+    display: flex;
     background: #f1f2f5;
 }

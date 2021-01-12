@@ -1,6 +1,6 @@
 .SlidebarRow{
     cursor: pointer;
-    padding: 1em 2em;
+    padding: .7em 2em;
 }
 .SlidebarRow:hover {
     background: lightgrey;

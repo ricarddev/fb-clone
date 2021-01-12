@@ -11,6 +11,9 @@
     border-radius: 10px;
     margin-right: 15px;
 }
+.story:last-child {
+    margin: 0;
+}
 .story:hover{
     transform: scale(1.05);
 }
