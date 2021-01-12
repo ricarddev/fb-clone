@@ -1,0 +1,56 @@
+.header{
+    padding: 1em 2em;
+    width: 100%;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+/* HEADEr LEFT */
+.header-left img{
+    width: 40px;
+}
+.header-input {
+    background: #eff2f5;
+    border-radius: 999px;
+    margin-left: .75em;
+    padding: .40em;
+}
+.header-input > input {
+    outline: none;
+    border: none;
+    margin-left: .2em;
+    background: transparent;
+}
+
+/* HEADER CENTER */
+.header-icon{
+    padding: 0 30px;
+    transition: all .3s ease;
+}
+.header-icon > .MuiSvgIcon-root {
+    color: gray;
+    transition: all .3s ease;
+}
+.header-icon:hover  > .MuiSvgIcon-root{
+    color: #2e81f4;
+    cursor: pointer;
+}
+.header-icon:hover{
+    background: #eff2f5;
+    border-bottom: none;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+.header-icon-active{
+    border-bottom: 4px solid #2e81f4;
+}
+.header-icon-active > .MuiSvgIcon-root {
+    color: #2e81f4;
+}
+/* HEADER RIGHT  */
+
+.header-right-info > h4 {
+    margin-left: .5em;
+}

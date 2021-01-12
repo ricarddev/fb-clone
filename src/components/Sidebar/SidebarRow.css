@@ -1,0 +1,16 @@
+.SlidebarRow{
+    cursor: pointer;
+    padding: 1em 2em;
+}
+.SlidebarRow:hover {
+    background: lightgrey;
+    border-radius: 10px;
+}
+.SlidebarRow h4 {
+    margin-left: .5em;
+    font-weight: 600;
+}
+.SlidebarRow .MuiSvgIcon-root{
+    font-size: xx-large;
+    color: #2e81f4;
+}
