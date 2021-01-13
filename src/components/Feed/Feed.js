@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Feed.css';
 import MessageSender from './MessageSender';
 import Post from './Post';
 import StoryReel from './StoryReel';
+import db from '../../firebase';
 
 function Feed() {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => 
+            setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+        );
+    }, []);
+
     return (
         <div className="feed flex">
             <StoryReel />
             <MessageSender />
-            <Post 
-                profilePic="https://avatars1.githubusercontent.com/u/74429701?s=400&u=b8bcbc0a81ef6366eedd30d7f064a244ed306318&v=4"
-                message="EYYY that's working!"
-                username="Ricard Solona"
-                image="https://images.pexels.com/photos/2422969/pexels-photo-2422969.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" profileSrc="https://avatars1.githubusercontent.com/u/74429701?s=400&u=b8bcbc0a81ef6366eedd30d7f064a244ed306318&v=4"
-            />
-            <Post 
-                 profilePic="https://avatars1.githubusercontent.com/u/74429701?s=400&u=b8bcbc0a81ef6366eedd30d7f064a244ed306318&v=4"
-                 message="EYYY that's working!"
-                 username="Ricard Solona"
-                 image=""
-            />
-            <Post />
+            {posts.map(post => (
+                <Post
+                    key={post.data.id}
+                    profilePic={post.data.profilePic}
+                    image={post.data.image}
+                    timestamp={post.data.timestamp}
+                    message={post.data.message}
+                    username= {post.data.username}
+                />
+            ))}
         </div>
     )
 }

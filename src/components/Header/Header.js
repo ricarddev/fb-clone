@@ -12,9 +12,13 @@ import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { IconButton } from '@material-ui/core';
+import { useStateValue } from '../../StateProvider';
 
 
 function Header() {
+
+    const [{user}, dispatch] = useStateValue();
+
     return (
         <div className="header s-bt flex">
             <div className="header-left flex s-ev">
@@ -45,8 +49,8 @@ function Header() {
 
             <div className="header-right">
                 <div className="header-right-info flex">
-                    <Avatar src="https://avatars1.githubusercontent.com/u/74429701?s=400&u=b8bcbc0a81ef6366eedd30d7f064a244ed306318&v=4" alt=""/>
-                    <h4>Ricard Solsona</h4>
+                    <Avatar src={user.photoURL} alt=""/>
+                    <h4>{user.displayName}</h4>
                     <IconButton>
                         <AddIcon />
                     </IconButton>

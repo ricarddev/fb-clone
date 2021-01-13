@@ -1,4 +1,5 @@
 .app-body{
     display: flex;
     background: #f1f2f5;
+    min-height: 100vh;
 }

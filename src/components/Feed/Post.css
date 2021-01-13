@@ -25,6 +25,8 @@
 }
 .post-image > img{
     width: 100%;
+    max-height: max-content;
+    object-fit: contain;
 }
 .post-options {
     padding: 15px 10px 10px 10px;
